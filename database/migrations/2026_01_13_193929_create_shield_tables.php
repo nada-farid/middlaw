@@ -1,0 +1,48 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration {
+    public function up(): void
+    {
+        // roles table
+        Schema::create('roles', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->unique();
+            $table->string('guard_name')->default('web');
+            $table->timestamps();
+        });
+
+        // permissions table
+        Schema::create('permissions', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->unique();
+            $table->string('guard_name')->default('web');
+            $table->timestamps();
+        });
+
+        // model_has_roles table
+        Schema::create('model_has_roles', function (Blueprint $table) {
+            $table->foreignId('role_id')->constrained('roles')->cascadeOnDelete();
+            $table->morphs('model');
+            $table->primary(['role_id','model_id','model_type']);
+        });
+
+        // role_has_permissions table
+        Schema::create('role_has_permissions', function (Blueprint $table) {
+            $table->foreignId('permission_id')->constrained('permissions')->cascadeOnDelete();
+            $table->foreignId('role_id')->constrained('roles')->cascadeOnDelete();
+            $table->primary(['permission_id','role_id']);
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('role_has_permissions');
+        Schema::dropIfExists('model_has_roles');
+        Schema::dropIfExists('permissions');
+        Schema::dropIfExists('roles');
+    }
+};

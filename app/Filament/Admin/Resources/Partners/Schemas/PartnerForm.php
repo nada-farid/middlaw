@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Filament\Admin\Resources\Partners\Schemas;
+
+use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Schema;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+
+class PartnerForm
+{
+    public static function configure(Schema $schema): Schema
+    {
+        return $schema
+            ->components([
+                TextInput::make('name'),
+                TextInput::make('link'),
+                SpatieMediaLibraryFileUpload::make('image')
+                ->collection('image')
+                ->disk('public') 
+                ->image()
+                ->required(),
+            ]);
+    }
+}

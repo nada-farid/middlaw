@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'AXtShareQ';
+    src: url('AXtShareQ.woff2') format('woff2'),
+        url('AXtShareQ.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Al-Jazeera-Arabic';
+    src: url('Al-Jazeera-Arabic-Regular.woff2') format('woff2'),
+        url('Al-Jazeera-Arabic-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GE SS Text';
+    src: url('GESSTextUltraLight-UltraLight.woff2') format('woff2'),
+        url('GESSTextUltraLight-UltraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fairuz Normal';
+    src: url('Fairuz-Normal.woff2') format('woff2'),
+        url('Fairuz-Normal.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Al-Jazeera-Arabic';
+    src: url('Al-Jazeera-Arabic-Bold.woff2') format('woff2'),
+        url('Al-Jazeera-Arabic-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GE East';
+    src: url('GEEast-ExtraBold.woff2') format('woff2'),
+        url('GEEast-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DIN Next LT Arabic';
+    src: url('DINNextLTArabic-Light.woff2') format('woff2'),
+        url('DINNextLTArabic-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fairuz';
+    src: url('Fairuz-Black.woff2') format('woff2'),
+        url('Fairuz-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DIN Next LT Arabic';
+    src: url('DINNextLTArabic-Heavy.woff2') format('woff2'),
+        url('DINNextLTArabic-Heavy.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GE SS Text';
+    src: url('GESSTextLight-Light.woff2') format('woff2'),
+        url('GESSTextLight-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GE SS Text';
+    src: url('GESSTextMedium-Medium.woff2') format('woff2'),
+        url('GESSTextMedium-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DIN Next LT Arabic';
+    src: url('DINNextLTArabic-Medium.woff2') format('woff2'),
+        url('DINNextLTArabic-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
