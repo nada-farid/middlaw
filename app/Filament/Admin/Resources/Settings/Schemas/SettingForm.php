@@ -6,6 +6,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use Filament\Forms\Components\RichEditor;
 
 class SettingForm
 {
@@ -16,14 +17,13 @@ class SettingForm
                 TextInput::make('site_name')
                     ->required(),
                 TextInput::make('email')
-                    ->label('Email address')
-                    ->email(),
+                    ->label('Email address'),
                 TextInput::make('phone')
                     ->tel(),
                 TextInput::make('address'),
                 Textarea::make('description')
                     ->columnSpanFull(),
-                Textarea::make('about_us')
+                RichEditor::make('about_us')
                     ->columnSpanFull(),
                 Textarea::make('footer_text')
                     ->columnSpanFull(),
@@ -35,7 +35,7 @@ class SettingForm
                     ->columnSpanFull(),
                 Textarea::make('mission')
                     ->columnSpanFull(),
-                Textarea::make('values')
+                RichEditor::make('values')
                     ->columnSpanFull(),
                 Textarea::make('goals')
                     ->columnSpanFull(),
@@ -73,18 +73,15 @@ class SettingForm
                SpatieMediaLibraryFileUpload::make('logo')
                     ->collection('logo')
                     ->disk('public')
-                    ->image()
-                    ->required(),
+                    ->image(),
                 SpatieMediaLibraryFileUpload::make('background_image')
                     ->collection('background_image')
                     ->disk('public')
-                    ->image()
-                    ->required(),
-                SpatieMediaLibraryFileUpload::make('about_us')
-                    ->collection('about_us')
+                    ->image(),
+                SpatieMediaLibraryFileUpload::make('about_us_image')
+                    ->collection('about_us_image')
                     ->disk('public')
-                    ->image()
-                    ->required(),
+                    ->image(),
             ]);
     }
 }

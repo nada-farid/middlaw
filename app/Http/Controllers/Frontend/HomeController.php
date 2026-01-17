@@ -19,6 +19,8 @@ use App\Models\Job;
 use App\Models\Client;
 use App\Models\Employment;
 use App\Models\DynamicSettingField;
+use App\Models\Consulting;
+use App\Models\Testimonial;
 use App\Http\Requests\StoreEmploymentFrontendRequest;
 use RealRashid\SweetAlert\Facades\Alert;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -33,54 +35,43 @@ class HomeController extends Controller
         $news = News::with(['media'])->orderBy('id', 'desc')->take(3)->get();
         $services = Service::get()->take(6);
         $clients = Client::all();
-        
-        return view('frontend.index', compact('setting', 'sliders', 'news','services','clients'));
+        $consultings = Consulting::orderBy('id', 'desc')->take(4)->get();
+        $testimonials = Testimonial::with(['media'])->orderBy('id', 'desc')->get();
+        return view('frontend.index', compact('setting', 'sliders', 'news','services','clients','consultings','testimonials'));
     }
 
     public function about(){
-        $goals = Goal::orderBy('id', 'asc')->get();
-        $teams = Team::with(['media'])->orderBy('id', 'asc')->get();
-        $dynamicFields = DynamicSettingField::active()->ordered()->get();
-        return view('frontend.about', compact('goals', 'teams', 'dynamicFields'));
+        return view('frontend.about');
     }
 
-    public function managers(){
-        return view('frontend.manger');
-    }
     public function partners(){
         $partners = Partner::with(['media'])->orderBy('id', 'asc')->get();
         return view('frontend.partners', compact('partners'));
     }
-    public function awards(){
-        $awards = Award::orderBy('id', 'asc')->get();
-        return view('frontend.awards', compact('awards'));
-    }
+
     public function employment(){
-        $jobs = Job::orderBy('id', 'asc')->get();
-        return view('frontend.employment',compact('jobs'));
+        return view('frontend.employment');
     }
 
     public function storeEmployment(StoreEmploymentFrontendRequest $request){
         $employment = Employment::create([
             'name' => $request->name,
-            'email' => $request->email,
+            'address' => $request->address,
             'phone' => $request->phone,
-            'brief' => $request->brief,
-            'job_id' => $request->job_id,
+            'email' => $request->email,
+            'position' => $request->position,
+            'experience' => $request->experience,
         ]);
 
-        if ($request->hasFile('cv')) {
-            $employment->addMediaFromRequest('cv')->toMediaCollection('cv');
+        if ($request->hasFile('resume')) {
+            $employment->addMediaFromRequest('resume')->toMediaCollection('resume');
         }
 
         Alert::success('تم بنجاح', 'تم إرسال طلب التوظيف بنجاح، سنتواصل معك قريباً');
 
         return redirect()->back();
     }
-    public function license(){
-        $license = Setting::where('key', 'license')->first();
-        return view('frontend.license', compact('license'));
-    }
+
 
     public function run(){
         Artisan::call('storage:link');

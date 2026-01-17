@@ -4,15 +4,17 @@
 Route::as('frontend.')->namespace('App\Http\Controllers\Frontend')->group(function () {
    Route::get('/', 'HomeController@index')->name('home');
    Route::get('/about', 'HomeController@about')->name('about');
-   Route::get('/services', 'HomeController@services')->name('services');
-   Route::get('/services/{slug}', 'HomeController@serviceShow')->name('service.show');
-   Route::get('/news', 'HomeController@news')->name('news');
-   Route::get('/news/{slug}', 'HomeController@newsShow')->name('news.show');
+   Route::get('/services', 'ServicesController@index')->name('services');
+   Route::get('/services/{slug}', 'ServicesController@show')->name('service.show');
+   Route::get('/news', 'NewsController@index')->name('news');
+   Route::get('/news/{slug}', 'NewsController@show')->name('news.show');
    Route::get('/blog', 'HomeController@blog')->name('blog');
    Route::get('/blog/{slug}', 'HomeController@blogShow')->name('blog.show');
-   Route::get('/contact', 'HomeController@contact')->name('contact');
-   Route::post('/contact', 'HomeController@storeContact')->name('contact.store');
-   Route::get('/jobs', 'HomeController@jobs')->name('jobs');
+   Route::get('/contact', 'ContactController@contact')->name('contact');
+   Route::post('/contact', 'ContactController@store')->name('contact.store');
+   Route::get('/employment', 'HomeController@employment')->name('employment');
+   Route::post('/employment', 'HomeController@storeEmployment')->name('employment.store');
    Route::get('/partners', 'HomeController@partners')->name('partners');
+   Route::post('/contact', 'ContactController@store')->name('contact.store');
    
 });

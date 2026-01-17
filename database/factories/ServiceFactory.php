@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 use App\Models\Service;
+use Illuminate\Support\Str;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -34,7 +35,10 @@ class ServiceFactory extends Factory
 ستدير عملية إعادة الهيكلة لجنة مشكلة من الخبراء المدرجين في جدول خبراء الإفلاس في المحاكم الاقتصادية.
 
 تقوم لجنة إعادة الهيكلة بإعداد تقرير للقاضي المختص خلال 3 أشهر برأيها في أسباب الاضطراب المالي والإداري للشركة وفعالية الدخول في إعادة الهيكلة والخطة المقترحة. في جميع الأحوال يجب ألا يستغرق تنفيذ الخطة أكثر من 5 سنوات.'
-        ];
+
+        ,
+        'slug'=>Str::slug('الاستشارات القانونية'),
+    ];
     }
 
     public function withMedia(): Factory
@@ -48,6 +52,14 @@ class ServiceFactory extends Factory
             }
             if (file_exists($sourcePath) && file_exists($destinationPath)) {
                 $service->addMedia($destinationPath)->toMediaCollection('service_image');
+            }
+            $sourcePath = public_path("frontend/assets/images/features/icon.png");
+            if (file_exists($sourcePath)) {
+                $destinationPath = public_path("frontend/assets/images/features/icon-temp.png");
+                copy($sourcePath, $destinationPath);
+            }
+            if (file_exists($sourcePath) && file_exists($destinationPath)) {
+                $service->addMedia($destinationPath)->toMediaCollection('service_icon');
             }
         });
     }

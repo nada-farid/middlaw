@@ -48,17 +48,19 @@ class Setting extends Model implements HasMedia
             ->singleFile();
 
     }
-
     public function getLogoAttribute(): ?string
     {
-        return $this->getFirstMediaUrl('logo');
+        return $this->getFirstMediaUrl('logo') ?: null;
     }
+    
+    public function getAboutUsImageAttribute(): ?string
+    {
+        return $this->getFirstMediaUrl('about_us') ?: null;
+    }
+    
     public function getBackgroundImageAttribute(): ?string
     {
-        return $this->getFirstMediaUrl('background_image');
+        return $this->getFirstMediaUrl('background_image') ?: null;
     }
-    public function getAboutUsAttribute(): ?string
-    {
-        return $this->getFirstMediaUrl('about_us');
-    }
+    
 }

@@ -14,6 +14,7 @@ class News extends Model implements HasMedia
 
     protected $fillable = [
         'title',
+        'slug',
         'short_description',
         'description',
         'address',
@@ -44,5 +45,9 @@ class News extends Model implements HasMedia
     public function getSlugAttribute()
     {
         return Str::slug($this->title);
+    }
+    public function setSlugAttribute($value)
+    {
+        $this->attributes['slug'] = Str::slug($this->title);
     }
 }

@@ -59,6 +59,22 @@ class SettingSeeder extends Seeder
     if(file_exists($sourcePath) && file_exists($destinationPath)){
         $setting->addMedia($destinationPath)->toMediaCollection('logo');
     }
+    $sourcePath = public_path('frontend/assets/images/bread.jpg');
+    if(file_exists($sourcePath)){
+        $destinationPath = public_path('frontend/assets/images/bread-temp.jpg');
+        copy($sourcePath, $destinationPath);
+    } 
+    if(file_exists($sourcePath) && file_exists($destinationPath)){
+        $setting->addMedia($destinationPath)->toMediaCollection('background_image');
+    }
+    $sourcePath = public_path('frontend/assets/images/about01.jpg');
+    if(file_exists($sourcePath)){
+        $destinationPath = public_path('frontend/assets/images/about01-temp.jpg');
+        copy($sourcePath, $destinationPath);
+    } 
+    if(file_exists($sourcePath) && file_exists($destinationPath)){
+        $setting->addMedia($destinationPath)->toMediaCollection('about_us_image');
+    }
 
 }
 

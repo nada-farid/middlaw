@@ -7,6 +7,7 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Filament\Tables\Columns\ImageColumn;
 
 
 class SettingsTable
@@ -72,6 +73,18 @@ class SettingsTable
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+                 ImageColumn::make('logo')
+                    ->label('الشعار')
+                    ->height(60)
+                    ->square(),
+                ImageColumn::make('background_image')
+                    ->label('الخلفية')
+                    ->height(60)
+                    ->square(),
+                ImageColumn::make('about_us')
+                    ->label('عن مداد')
+                    ->height(60)
+                    ->square(),
             ])
             ->filters([
                 //

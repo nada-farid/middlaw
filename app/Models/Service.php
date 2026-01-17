@@ -6,12 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Str;
 
 class Service extends Model implements HasMedia
 {
     use InteractsWithMedia , HasFactory;
     protected $fillable = [
         'name',
+        'slug',
         'description',
         'content',
     ];
@@ -31,6 +33,10 @@ class Service extends Model implements HasMedia
     public function getServiceIconAttribute(): ?string
     {
         return $this->getFirstMediaUrl('service_icon');
+    }
+    public function setSlugAttribute($value)
+    {
+        $this->attributes['slug'] = Str::slug($this->name);
     }
 
 }

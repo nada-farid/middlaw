@@ -27,7 +27,7 @@ class partnerFactory extends Factory
 
     public function withMedia(): Factory
     {
-        return $this->afterCreating(function (Service $service) {
+        return $this->afterCreating(function (Partner $partner) {
     
             $sourcePath = public_path("frontend/assets/images/awards/awards-1.png");
             if (file_exists($sourcePath)) {
@@ -35,7 +35,7 @@ class partnerFactory extends Factory
                 copy($sourcePath, $destinationPath);
             }
             if (file_exists($sourcePath) && file_exists($destinationPath)) {
-                $service->addMedia($destinationPath)->toMediaCollection('image');
+                $partner->addMedia($destinationPath)->toMediaCollection('image');
             }
         });
     }

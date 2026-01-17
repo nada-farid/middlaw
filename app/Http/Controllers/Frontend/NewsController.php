@@ -10,7 +10,7 @@ class NewsController extends Controller
 {
     public function index()
     {
-        $news = News::with(['media'])->orderBy('id', 'desc')->paginate(12);
+        $news = News::with(['media'])->orderBy('id', 'desc')->paginate(3);
         
         return view('frontend.news', compact('news'));
     }
@@ -18,7 +18,7 @@ class NewsController extends Controller
     public function show($slug)
     {
         $news = News::with(['media'])->where('slug', $slug)->firstOrFail();
-        $recentNews = News::with(['media'])->where('slug', '!=', $slug)->orderBy('id', 'desc')->take(4)->get();
+        $recentNews = News::with(['media'])->where('id', '!=', $news->id)->orderBy('id', 'desc')->take(4)->get();
         
         return view('frontend.news-details', compact('news', 'recentNews'));
     }

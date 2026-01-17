@@ -16,6 +16,7 @@
 	<link href="{{ asset('frontend/assets/css/media-query.css') }}" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+	@yield('style')
 </head>
 <body>
 	<!-- Main Body Start -->
@@ -76,7 +77,7 @@
 									<a href="{{ route('frontend.about') }}"> تعرف علينا</a>
 								</li>
 								<li>
-									<a href="{{ route('frontend.jobs') }}"> التوظيف </a>
+									<a href="{{ route('frontend.employment') }}"> التوظيف </a>
 								</li>
 								<li>
 									<a href="{{ route('frontend.services') }}"> خدماتنا </a>
@@ -193,7 +194,9 @@
 	<script src="{{ asset('frontend/assets/js/slider1.js') }}"></script>    
 	<script src="{{ asset('frontend/assets/js/back-to-top.js') }}"></script>
 	<script src="{{ asset('frontend/assets/js/counter.js') }}"></script>
-    @yield('scripts')
+     @include('sweetalert::alert')
+	@yield('scripts')
+	
 </body>
 </html>
 
