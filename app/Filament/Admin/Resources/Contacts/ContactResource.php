@@ -24,6 +24,11 @@ class ContactResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Contact';
 
+    public static function getNavigationLabel(): string
+    {
+        return __('filament.contact.title');
+    }
+
     public static function form(Schema $schema): Schema
     {
         return ContactForm::configure($schema);

@@ -19,25 +19,18 @@ class SlidersTable
         return $table
             ->columns([
                 ImageColumn::make('slider_image')
-                ->label('الصورة')
+                ->label(__('filament.slider.fields.slider_image'))
                 ->height(60)
                 ->square(),
                 
 
                 TextColumn::make('title_1')
-                    ->label('العنوان 1')
+                    ->label(__('filament.slider.fields.title_1'))
                     ->searchable(),
 
-                TextColumn::make('title_2')
-                    ->label('العنوان 2')
-                    ->searchable(),
-
-                TextColumn::make('title_3')
-                    ->label('العنوان 3')
-                    ->searchable(),
 
                 ToggleColumn::make('is_active')
-                    ->label('مفعل'),
+                    ->label(__('filament.slider.fields.is_active')),
             ])
             ->recordActions([
                 ViewAction::make(),

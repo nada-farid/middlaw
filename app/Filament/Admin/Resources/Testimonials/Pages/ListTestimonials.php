@@ -10,6 +10,11 @@ class ListTestimonials extends ListRecords
 {
     protected static string $resource = TestimonialResource::class;
 
+    public function getTitle(): string
+    {
+        return __('filament.testimonial.title');
+    }
+
     protected function getHeaderActions(): array
     {
         return [

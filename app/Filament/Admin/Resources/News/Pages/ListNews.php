@@ -10,6 +10,11 @@ class ListNews extends ListRecords
 {
     protected static string $resource = NewsResource::class;
 
+    public function getTitle(): string
+    {
+        return __('filament.news.title');
+    }
+
     protected function getHeaderActions(): array
     {
         return [

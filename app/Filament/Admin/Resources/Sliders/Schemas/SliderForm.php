@@ -14,19 +14,25 @@ class SliderForm
         return $schema
             ->components([
                 //
-                TextInput::make('title_1'),
+                TextInput::make('title_1')
+                    ->label(__('filament.slider.fields.title_1')),
                   
-                TextInput::make('title_2'),
-                    
-                TextInput::make('title_3'),
+                TextInput::make('title_2')
+                    ->label(__('filament.slider.fields.title_2')),
 
-                TextInput::make('button_text'),
-                TextInput::make('button_url'),
+                    
+                TextInput::make('title_3')
+                    ->label(__('filament.slider.fields.title_3')),
+
+                TextInput::make('button_text')
+                    ->label(__('filament.slider.fields.button_text')),
+                TextInput::make('button_url')
+                ->label(__('filament.slider.fields.button_url')),
                 SpatieMediaLibraryFileUpload::make('slider_image')
+                    ->label(__('filament.slider.fields.slider_image'))
                     ->collection('slider_image')
                     ->disk('public') 
-                    ->image()
-                    ->required(),                
+                    ->image(),                
             ]);
     }
 }

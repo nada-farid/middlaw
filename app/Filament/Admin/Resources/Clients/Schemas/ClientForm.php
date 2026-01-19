@@ -12,13 +12,16 @@ class ClientForm
     {
         return $schema
             ->components([
-                TextInput::make('name'),
-                TextInput::make('link'),
+                TextInput::make('name')
+                    ->label(__('filament.client.fields.name')),
+                TextInput::make('link')
+                    ->label(__('filament.client.fields.link')),
                 SpatieMediaLibraryFileUpload::make('image')
-                ->collection('image')
-                ->disk('public') 
-                ->image()
-                ->required(),
+                    ->label(__('filament.client.fields.image'))
+                    ->collection('image')
+                    ->disk('public') 
+                    ->image()
+                    ->required(),
             ]);
     }
 }

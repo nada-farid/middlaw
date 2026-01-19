@@ -10,6 +10,11 @@ class ListConsultings extends ListRecords
 {
     protected static string $resource = ConsultingResource::class;
 
+    public function getTitle(): string
+    {
+        return __('filament.consulting.title');
+    }
+
     protected function getHeaderActions(): array
     {
         return [

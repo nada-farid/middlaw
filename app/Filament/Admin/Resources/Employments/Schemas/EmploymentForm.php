@@ -13,18 +13,23 @@ class EmploymentForm
         return $schema
             ->components([
                 TextInput::make('name')
+                    ->label(__('filament.employment.fields.name'))
                     ->required(),
                 TextInput::make('email')
-                    ->label('Email address')
+                    ->label(__('filament.employment.fields.email'))
                     ->email()
                     ->required(),
                 TextInput::make('phone')
+                    ->label(__('filament.employment.fields.phone'))
                     ->tel()
                     ->required(),
-                TextInput::make('address'),
+                TextInput::make('address')
+                    ->label(__('filament.employment.fields.address')),
                 TextInput::make('position')
+                    ->label(__('filament.employment.fields.position'))
                     ->required(),
                 Textarea::make('experience')
+                    ->label(__('filament.employment.fields.experience'))
                     ->required()
                     ->columnSpanFull(),
             ]);

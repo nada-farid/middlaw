@@ -24,6 +24,11 @@ class EmploymentResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Employment';
 
+    public static function getNavigationLabel(): string
+    {
+        return __('filament.employment.title');
+    }
+
     public static function form(Schema $schema): Schema
     {
         return EmploymentForm::configure($schema);

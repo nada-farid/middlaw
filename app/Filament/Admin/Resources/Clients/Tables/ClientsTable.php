@@ -20,14 +20,18 @@ class ClientsTable
                 ->height(60)
                 ->square(),
                 TextColumn::make('name')
+                    ->label(__('filament.client.fields.name'))
                     ->searchable(),
                 TextColumn::make('link')
+                    ->label(__('filament.client.fields.link'))
                     ->searchable(),
                 TextColumn::make('created_at')
+                    ->label(__('filament.client.fields.created_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
+                    ->label(__('filament.client.fields.updated_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),

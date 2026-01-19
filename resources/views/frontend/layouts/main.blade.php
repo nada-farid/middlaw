@@ -105,7 +105,7 @@
 									<a href="{{ route('frontend.news') }}"> الأخبار </a>
 								</li>
 								<li>
-									<a href="{{ route('frontend.blog') }}"> المدونة </a>
+									<a href="{{ route('frontend.blogs') }}"> المدونة </a>
 								</li>
 								<li>
 									<a href="{{ route('frontend.contact') }}"> تواصل معنا</a>

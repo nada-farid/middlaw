@@ -10,8 +10,15 @@ class ListSliders extends ListRecords
 {
     protected static string $resource = SliderResource::class;
 
+    public function getTitle(): string
+    {
+        return __('filament.slider.title');
+    }
+    
+
     protected function getHeaderActions(): array
     {
+        
         return [
             CreateAction::make(),
         ];

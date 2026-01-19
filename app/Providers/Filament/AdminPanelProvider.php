@@ -28,6 +28,8 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->brandLogo(asset('frontend/assets/images/logo.png'))
+            ->brandName('مداد القانون')
             ->colors([
                 'primary' => Color::Amber,
             ])

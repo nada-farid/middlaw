@@ -24,7 +24,11 @@ class ServiceResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Service';
 
-    protected static ?int $navigationSort = 3;
+
+    public static function getNavigationLabel(): string
+    {
+        return __('filament.service.title');
+    }
 
     public static function form(Schema $schema): Schema
     {

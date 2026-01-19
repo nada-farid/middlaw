@@ -62,5 +62,8 @@ class Setting extends Model implements HasMedia
     {
         return $this->getFirstMediaUrl('background_image') ?: null;
     }
-    
+    public function getDownloadPdfAttribute(): ?string
+    {
+        return $this->getMedia('download_pdf')->last();
+    }
 }

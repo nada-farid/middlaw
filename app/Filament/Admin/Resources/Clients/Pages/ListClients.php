@@ -10,6 +10,11 @@ class ListClients extends ListRecords
 {
     protected static string $resource = ClientResource::class;
 
+    public function getTitle(): string
+    {
+        return __('filament.client.title');
+    }
+
     protected function getHeaderActions(): array
     {
         return [

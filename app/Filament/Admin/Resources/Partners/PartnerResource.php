@@ -24,6 +24,11 @@ class PartnerResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'partners';
 
+    public static function getNavigationLabel(): string
+    {
+        return __('filament.partner.title');
+    }
+
     public static function form(Schema $schema): Schema
     {
         return PartnerForm::configure($schema);

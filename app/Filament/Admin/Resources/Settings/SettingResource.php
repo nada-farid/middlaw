@@ -22,6 +22,11 @@ class SettingResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'settings';
 
+    public static function getNavigationLabel(): string
+    {
+        return __('filament.setting.title');
+    }
+
     public static function form(Schema $schema): Schema
     {
         return SettingForm::configure($schema);

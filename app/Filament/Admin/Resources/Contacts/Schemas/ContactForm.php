@@ -12,16 +12,20 @@ class ContactForm
     {
         return $schema
             ->components([
-                TextInput::make('name'),
+                TextInput::make('name')
+                    ->label(__('filament.contact.fields.name')),
                 TextInput::make('email')
-                    ->label('Email address')
+                    ->label(__('filament.contact.fields.email'))
                     ->email()
                     ->required(),
                 TextInput::make('phone')
+                    ->label(__('filament.contact.fields.phone'))
                     ->tel(),
                 Textarea::make('subject')
+                    ->label(__('filament.contact.fields.subject'))
                     ->columnSpanFull(),
                 Textarea::make('message')
+                    ->label(__('filament.contact.fields.message'))
                     ->required()
                     ->columnSpanFull(),
             ]);

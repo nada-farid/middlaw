@@ -10,6 +10,11 @@ class ListServices extends ListRecords
 {
     protected static string $resource = ServiceResource::class;
 
+    public function getTitle(): string
+    {
+        return __('filament.service.title');
+    }
+
     protected function getHeaderActions(): array
     {
         return [

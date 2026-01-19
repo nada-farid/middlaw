@@ -24,6 +24,11 @@ class TestimonialResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'testimonial';
 
+    public static function getNavigationLabel(): string
+    {
+        return __('filament.testimonial.title');
+    }
+
     public static function form(Schema $schema): Schema
     {
         return TestimonialForm::configure($schema);

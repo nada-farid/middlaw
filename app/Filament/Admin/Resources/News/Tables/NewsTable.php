@@ -22,16 +22,21 @@ class NewsTable
                 ->height(60)
                 ->square(),
                 TextColumn::make('title')
+                    ->label(__('filament.news.fields.title'))
                     ->searchable(),
                 TextColumn::make('address')
+                    ->label(__('filament.news.fields.address'))
                     ->searchable(),
                 IconColumn::make('is_active')
+                    ->label(__('filament.news.fields.is_active'))
                     ->boolean(),
                 TextColumn::make('created_at')
+                    ->label(__('filament.news.fields.created_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
+                    ->label(__('filament.news.fields.updated_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),

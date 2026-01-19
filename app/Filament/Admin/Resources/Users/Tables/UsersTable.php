@@ -18,18 +18,22 @@ class UsersTable
         return $table
             ->columns([
                 TextColumn::make('name')
+                    ->label(__('filament.user.fields.name'))
                     ->searchable(),
                 TextColumn::make('email')
-                    ->label('Email address')
+                    ->label(__('filament.user.fields.email'))
                     ->searchable(),
                 TextColumn::make('email_verified_at')
+                    ->label(__('filament.user.fields.email_verified_at'))
                     ->dateTime()
                     ->sortable(),
                 TextColumn::make('created_at')
+                    ->label(__('filament.user.fields.created_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
+                    ->label(__('filament.user.fields.updated_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),

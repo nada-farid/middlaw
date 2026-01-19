@@ -82,6 +82,11 @@ class SettingForm
                     ->collection('about_us_image')
                     ->disk('public')
                     ->image(),
+                SpatieMediaLibraryFileUpload::make('download_pdf')
+                    ->label(__('filament.setting.fields.download_pdf'))
+                    ->collection('download_pdf')
+                    ->disk('public')
+                    ->file(),
             ]);
     }
 }

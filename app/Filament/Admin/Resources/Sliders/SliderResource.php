@@ -16,6 +16,7 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 
+
 class SliderResource extends Resource
 {
     protected static ?string $model = Slider::class;
@@ -24,7 +25,10 @@ class SliderResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Slider';
 
-    protected static ?int $navigationSort = 3;
+    public static function getNavigationLabel(): string
+    {
+        return __('filament.slider.title');
+    }
 
     public static function form(Schema $schema): Schema
     {

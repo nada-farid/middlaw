@@ -16,21 +16,26 @@ class ContactsTable
         return $table
             ->columns([
                 TextColumn::make('name')
+                    ->label(__('filament.contact.fields.name'))
                     ->searchable(),
                 TextColumn::make('email')
-                    ->label('Email address')
+                    ->label(__('filament.contact.fields.email'))
                     ->searchable(),
                 TextColumn::make('phone')
+                    ->label(__('filament.contact.fields.phone'))
                     ->searchable(),
                 TextColumn::make('created_at')
+                    ->label(__('filament.contact.fields.created_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
+                    ->label(__('filament.contact.fields.updated_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('deleted_at')
+                    ->label(__('filament.contact.fields.deleted_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),

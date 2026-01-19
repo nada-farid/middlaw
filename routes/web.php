@@ -8,13 +8,12 @@ Route::as('frontend.')->namespace('App\Http\Controllers\Frontend')->group(functi
    Route::get('/services/{slug}', 'ServicesController@show')->name('service.show');
    Route::get('/news', 'NewsController@index')->name('news');
    Route::get('/news/{slug}', 'NewsController@show')->name('news.show');
-   Route::get('/blog', 'HomeController@blog')->name('blog');
-   Route::get('/blog/{slug}', 'HomeController@blogShow')->name('blog.show');
    Route::get('/contact', 'ContactController@contact')->name('contact');
    Route::post('/contact', 'ContactController@store')->name('contact.store');
    Route::get('/employment', 'HomeController@employment')->name('employment');
    Route::post('/employment', 'HomeController@storeEmployment')->name('employment.store');
    Route::get('/partners', 'HomeController@partners')->name('partners');
-   Route::post('/contact', 'ContactController@store')->name('contact.store');
+   Route::get('/blogs', 'BlogController@index')->name('blogs');
+   Route::get('/blogs/{slug}', 'BlogController@show')->name('blog.show');
    
 });

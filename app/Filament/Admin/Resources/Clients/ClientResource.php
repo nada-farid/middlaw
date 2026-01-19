@@ -22,6 +22,12 @@ class ClientResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'client';
 
+
+    public static function getNavigationLabel(): string
+    {
+        return __('filament.client.title');
+    }
+
     public static function form(Schema $schema): Schema
     {
         return ClientForm::configure($schema);

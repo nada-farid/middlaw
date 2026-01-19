@@ -24,6 +24,11 @@ class NewsResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'News';
 
+    public static function getNavigationLabel(): string
+    {
+        return __('filament.news.title');
+    }
+
     public static function form(Schema $schema): Schema
     {
         return NewsForm::configure($schema);

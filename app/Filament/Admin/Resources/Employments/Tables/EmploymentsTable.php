@@ -16,21 +16,27 @@ class EmploymentsTable
         return $table
             ->columns([
                 TextColumn::make('name')
+                    ->label(__('filament.employment.fields.name'))
                     ->searchable(),
                 TextColumn::make('email')
-                    ->label('Email address')
+                    ->label(__('filament.employment.fields.email'))
                     ->searchable(),
                 TextColumn::make('phone')
+                    ->label(__('filament.employment.fields.phone'))
                     ->searchable(),
                 TextColumn::make('address')
+                    ->label(__('filament.employment.fields.address'))
                     ->searchable(),
                 TextColumn::make('position')
+                    ->label(__('filament.employment.fields.position'))
                     ->searchable(),
                 TextColumn::make('created_at')
+                    ->label(__('filament.employment.fields.created_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
+                    ->label(__('filament.employment.fields.updated_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),

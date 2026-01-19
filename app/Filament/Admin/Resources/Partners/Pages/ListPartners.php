@@ -10,6 +10,11 @@ class ListPartners extends ListRecords
 {
     protected static string $resource = PartnerResource::class;
 
+    public function getTitle(): string
+    {
+        return __('filament.partner.title');
+    }
+
     protected function getHeaderActions(): array
     {
         return [

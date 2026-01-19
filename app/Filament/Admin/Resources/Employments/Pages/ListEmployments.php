@@ -10,6 +10,11 @@ class ListEmployments extends ListRecords
 {
     protected static string $resource = EmploymentResource::class;
 
+    public function getTitle(): string
+    {
+        return __('filament.employment.title');
+    }
+
     protected function getHeaderActions(): array
     {
         return [
