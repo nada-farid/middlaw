@@ -16,17 +16,21 @@ class BlogsTable
         return $table
             ->columns([
                 TextColumn::make('title')
+                    ->label(__('filament.blog.fields.title'))
                     ->searchable(),
                 TextColumn::make('by')
+                    ->label(__('filament.blog.fields.by'))
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->label(__('filament.blog.fields.created_at')),
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->label(__('filament.blog.fields.updated_at')),
                 ImageColumn::make('photo')
                     ->label(__('filament.blog.fields.photo'))
                     ->height(60)

@@ -22,6 +22,8 @@ class SettingResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'settings';
 
+    protected static ?int $navigationSort = 3;
+
     public static function getNavigationLabel(): string
     {
         return __('filament.setting.title');

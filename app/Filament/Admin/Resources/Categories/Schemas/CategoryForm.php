@@ -12,8 +12,8 @@ class CategoryForm
         return $schema
             ->components([
                 TextInput::make('name')
-                    ->required(),
-                TextInput::make('slug'),
+                    ->required()
+                    ->label(__('filament.category.fields.name')),
             ]);
     }
 }

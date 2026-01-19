@@ -15,30 +15,37 @@ class BlogForm
         return $schema
             ->components([
                 TextInput::make('title')
-                    ->required(),
+                    ->required()
+                    ->label(__('filament.blog.fields.title')),
                 RichEditor::make('content')
                     ->required()
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->label(__('filament.blog.fields.content')),
                 TextInput::make('by'),
                 RichEditor::make('content_2')
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->label(__('filament.blog.fields.content_2')),
                 RichEditor::make('conclusion')
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->label(__('filament.blog.fields.conclusion')),
                 SpatieMediaLibraryFileUpload::make('photo')
                     ->collection('photo')
                     ->disk('public') 
                     ->image()
-                    ->required(),
+                    ->required()
+                    ->label(__('filament.blog.fields.photo')),
                 SpatieMediaLibraryFileUpload::make('inside_image')
                     ->collection('inside_image')
                     ->disk('public') 
                     ->image()
-                    ->required(),
+                    ->required()
+                    ->label(__('filament.blog.fields.inside_image')),
                 SpatieMediaLibraryFileUpload::make('other_images')
                     ->collection('other_images')
                     ->disk('public') 
                     ->image()
-                    ->required(),
+                    ->required()
+                    ->label(__('filament.blog.fields.other_images')),
                 Select::make('category_id')
                     ->options(Category::all()->pluck('name', 'id'))
                     ->required(),

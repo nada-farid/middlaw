@@ -22,6 +22,8 @@ class ConsultingResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Consulting';
 
+    protected static ?int $navigationSort = 15;
+
     public static function getNavigationLabel(): string
     {
         return __('filament.consulting.title');

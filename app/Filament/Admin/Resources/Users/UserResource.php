@@ -24,6 +24,8 @@ class UserResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'User';
 
+    protected static ?int $navigationSort = 1;
+
     public static function getNavigationLabel(): string
     {
         return __('filament.user.title');

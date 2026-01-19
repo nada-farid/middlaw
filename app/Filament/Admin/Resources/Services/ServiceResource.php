@@ -24,6 +24,7 @@ class ServiceResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Service';
 
+    protected static ?int $navigationSort = 4;
 
     public static function getNavigationLabel(): string
     {

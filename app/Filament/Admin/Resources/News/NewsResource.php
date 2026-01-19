@@ -24,6 +24,8 @@ class NewsResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'News';
 
+    protected static ?int $navigationSort = 5;
+
     public static function getNavigationLabel(): string
     {
         return __('filament.news.title');

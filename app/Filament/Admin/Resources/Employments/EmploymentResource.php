@@ -24,6 +24,8 @@ class EmploymentResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Employment';
 
+    protected static ?int $navigationSort = 14;
+
     public static function getNavigationLabel(): string
     {
         return __('filament.employment.title');

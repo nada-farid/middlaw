@@ -24,6 +24,8 @@ class BlogResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'blogs';
 
+    protected static ?int $navigationSort = 12;
+
     public static function form(Schema $schema): Schema
     {
         return BlogForm::configure($schema);

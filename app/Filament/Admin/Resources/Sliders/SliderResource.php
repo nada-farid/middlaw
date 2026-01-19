@@ -25,6 +25,8 @@ class SliderResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Slider';
 
+    protected static ?int $navigationSort = 2;
+
     public static function getNavigationLabel(): string
     {
         return __('filament.slider.title');

@@ -22,6 +22,7 @@ class ClientResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'client';
 
+    protected static ?int $navigationSort = 6;
 
     public static function getNavigationLabel(): string
     {

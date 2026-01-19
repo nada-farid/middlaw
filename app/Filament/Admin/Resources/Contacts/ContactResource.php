@@ -24,6 +24,8 @@ class ContactResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Contact';
 
+    protected static ?int $navigationSort = 11;
+
     public static function getNavigationLabel(): string
     {
         return __('filament.contact.title');

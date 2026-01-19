@@ -24,6 +24,8 @@ class PartnerResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'partners';
 
+    protected static ?int $navigationSort = 7;
+
     public static function getNavigationLabel(): string
     {
         return __('filament.partner.title');

@@ -24,6 +24,8 @@ class TestimonialResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'testimonial';
 
+    protected static ?int $navigationSort = 13;
+
     public static function getNavigationLabel(): string
     {
         return __('filament.testimonial.title');

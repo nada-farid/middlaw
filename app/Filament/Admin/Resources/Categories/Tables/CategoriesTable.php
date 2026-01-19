@@ -16,13 +16,13 @@ class CategoriesTable
         return $table
             ->columns([
                 TextColumn::make('name')
-                    ->searchable(),
-                TextColumn::make('slug')
+                    ->label(__('filament.category.fields.name'))
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->label(__('filament.category.fields.created_at')),
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
